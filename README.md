@@ -1,3 +1,4 @@
+
 ﻿
 # Project Work PCTO GROUP 6
 
@@ -601,16 +602,28 @@ For the resolution of the fourth task we have divided the code into three functi
 ### ALEXA
 
 After having implemented all the lambda functions, we took care of creating the skills to be called in alexa to be able to correctly execute the various commands.
-Simply we call the lambda function of all the tasks and we extract the data from the returned json data.
+Simply, we call the lambda function of all the tasks and we extract the data from the returned json data.
 
 ```mermaid
 graph LR
-A(Alexa) -- 1.Richiama la funzione --> B(Lambda Function)
-B -- 2.Ritorna i risultati --> A
-A -- 3. --> D{Output al client}
+A(Alexa) -- 1.Call the function --> B(Lambda Function)
+B -- 2.Return the results --> A
+A -- 3. --> D{Client's screen}
 ```
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-> 
+
+#### HOW IT WORKS
+There are several steps to do to make alexa work with the lambda functions:
+1. ***Set up an Alexa task***, the most important step is to create the actual skill that we need to call to make Alexa work and set a skill invocation name;
+> **Skill invocation name warning:** The invocation name can't contain Alexa
+2. ***Creating the intents***, after creating the skill, we need to create the intents, the requests that we are gonna ask Alexa to do for us. Every intent has his unique name and his uniques sentences to invoke them;
+> **Intents extra:** Every intent has different invocation sentences
+3. **Creating the intents slots**, the intens slots are those that we can call variables in IT programming and just like in programming they have a **slot type** in Alexa too. Those types can be Amazon.given types or Custom ( created by the programmer );
+4. ***Start coding***, the first thing to do is to add the class function of the intent we need to invoke and then we add the class to the list of fucntions that are gonna be read in the end of the file;
+5. ***Testing***, the last but not the least step to put in place is the testing ( execute ), here we are gonna test the Alexa skill completely and see if it contains some sort of bug;
+6. ***Resolving bugs and deploy***, in the end, we correct everytype of bug and finish the work.
+
+
+
 #### CODE
 ``` python
 # -*- coding: utf-8 -*-
