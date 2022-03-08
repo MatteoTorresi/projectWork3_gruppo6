@@ -24,6 +24,19 @@ Each element of the list is divided into several elements:
 
 The json file contains about 6 thousand elements, which increaseas the time to carry out operations, for this reason we have to adopt strategies to optimize the calculation time of each instruction as much as possible becouse a lambda function on amazon server can be excecuted for no more than three seconds.
 
+####  LAMBDA FUNCTIONS:
+	Steps to make the lambda function work:
+
+1. ***Make the lambda function***, the first step to do is to create the lambda function and code it in python. The most important details to keep in mind are:
+	 -  Organise and set the layers for the requests module
+	 -  Set the environment variables
+	 -  Return a json format dictionary
+	 
+2. ***Set up an an API Gateway***, the second step is to create the API Gateway, create a resource and set a **get** method in the same resourse with the lambda function connected and in the end distribute the API in a **phase**;
+4. ***Testing***, after the API setting, we now can run our lamda function by capying the url in the phase option and paste it in *postman*;
+> **Carful:** The get method and post method are different to each others
+5. ***Resolving bugs and testing again***, in the end we test again and again to improve the code and correct bugs until we have nothing left to correct.
+
 ---
 
 ### TASK 1
@@ -612,7 +625,8 @@ A -- 3. --> D{Client's screen}
 ```
 
 #### HOW IT WORKS
-There are several steps to do to make alexa work with the lambda functions:
+	Steps to make Alexa work:
+
 1. ***Set up an Alexa task***, the most important step is to create the actual skill that we need to call to make Alexa work and set a skill invocation name;
 > **Skill invocation name warning:** The invocation name can't contain Alexa
 2. ***Creating the intents***, after creating the skill, we need to create the intents, the requests that we are gonna ask Alexa to do for us. Every intent has his unique name and his uniques sentences to invoke them;
@@ -620,7 +634,7 @@ There are several steps to do to make alexa work with the lambda functions:
 3. **Creating the intents slots**, the intens slots are those that we can call variables in IT programming and just like in programming they have a **slot type** in Alexa too. Those types can be Amazon.given types or Custom ( created by the programmer );
 4. ***Start coding***, the first thing to do is to add the class function of the intent we need to invoke and then we add the class to the list of fucntions that are gonna be read in the end of the file;
 5. ***Testing***, the last but not the least step to put in place is the testing ( execute ), here we are gonna test the Alexa skill completely and see if it contains some sort of bug;
-6. ***Resolving bugs and deploy***, in the end, we correct everytype of bug and finish the work.
+6. ***Resolving bugs and testing again***, in the end, we correct everytype of bug and finish the work.
 
 
 
